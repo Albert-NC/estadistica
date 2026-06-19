@@ -28,13 +28,19 @@ import Comites from '../pages/organizacion/Comites';                 // agrupa l
 import AcademicoIndex from '../pages/academico/index';
 import PlanEstudios from '../pages/academico/PlanEstudios';
 import Titulacion from '../pages/academico/Titulacion';
+import Laboratorios from '../pages/academico/Laboratorios';
+import Biblioteca from '../pages/academico/Biblioteca';
 
 // Módulo: Investigación
 import InvestigacionIndex from '../pages/investigacion/index';
 import Lineas from '../pages/investigacion/Lineas';
 import Publicaciones from '../pages/investigacion/Publicaciones';
+import Revistas from '../pages/investigacion/Revistas';
 import ProyectosGrupo from '../pages/investigacion/ProyectosGrupo'; // agrupa proyectos + tesis
 import Convenios from '../pages/investigacion/convenios';            // reutilizado en Académico
+import EmpleabilidadIndex from '../pages/empleabilidad/index';
+import PorqueEstudiar from '../pages/empleabilidad/PorqueEstudiar';
+import CasosExito from '../pages/empleabilidad/CasosExito';
 
 // Páginas reutilizadas
 import Docentes from '../pages/autoridades/Docentes';       // Organización › Docentes
@@ -80,7 +86,8 @@ export default function AppRouter() {
             <Route path="/academico" element={<AcademicoIndex />}>
               <Route index element={<PlanEstudios />} />
               <Route path="malla-curricular" element={<PlanEstudios />} />
-              <Route path="laboratorios" element={<EnConstruccion titulo="Laboratorios" />} />
+              <Route path="laboratorios" element={<Laboratorios />} />
+              <Route path="biblioteca" element={<Biblioteca />} />
               <Route path="responsabilidad-social" element={<EnConstruccion titulo="Responsabilidad **Social**" />} />
               <Route path="convenios" element={<Convenios />} />
               <Route path="movilidad" element={<EnConstruccion titulo="Movilidad" />} />
@@ -93,8 +100,15 @@ export default function AppRouter() {
               <Route index element={<Lineas />} />
               <Route path="lineas" element={<Lineas />} />
               <Route path="publicaciones" element={<Publicaciones />} />
-              <Route path="revistas" element={<EnConstruccion titulo="Revistas" />} />
+              <Route path="revistas" element={<Revistas />} />
               <Route path="proyectos" element={<ProyectosGrupo />} />
+            </Route>
+
+            {/* ── Empleabilidad ── */}
+            <Route path="/empleabilidad" element={<EmpleabilidadIndex />}>
+              <Route index element={<PorqueEstudiar />} />
+              <Route path="porque-estudiar" element={<PorqueEstudiar />} />
+              <Route path="casos-exito" element={<CasosExito />} />
             </Route>
 
             {/* ── Admisión (panel lateral) ── */}

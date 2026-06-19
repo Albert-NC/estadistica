@@ -6,7 +6,7 @@ import PageHero, { type Breadcrumb } from './PageHero';
 import SectionTabs from './SectionTabs';
 import { getSection, getInternalItems } from '../../constants/navigation';
 
-const SITE_NAME = 'Ingeniería Ambiental · UNT';
+const SITE_NAME = 'Estadística · UNT';
 
 interface SectionLayoutProps {
   title: string;

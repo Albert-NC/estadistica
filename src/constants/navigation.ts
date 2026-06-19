@@ -114,7 +114,6 @@ export const NAV_LINKS: NavSection[] = [
             path: '/organizacion/comites',
             navAs: [
               { name: 'Calidad (Autoevaluación / Acreditación)', path: '/organizacion/comites#calidad' },
-              { name: 'Coteccu', path: '/organizacion/comites#coteccu' },
               { name: 'Consejería y tutoría', path: '/organizacion/comites#consejeria' },
               { name: 'Comité de Investigación', path: '/organizacion/comites#investigacion' },
               { name: 'Comisión', path: '/organizacion/comites#comision' },
@@ -144,6 +143,7 @@ export const NAV_LINKS: NavSection[] = [
         label: 'Recursos',
         items: [
           { name: 'Laboratorios', path: '/academico/laboratorios' },
+          { name: 'Biblioteca', path: '/academico/biblioteca' },
           { name: 'Bienestar', path: '#', external: true },
         ],
       },
@@ -184,6 +184,24 @@ export const NAV_LINKS: NavSection[] = [
       },
     ],
   },
+  {
+    name: 'Empleabilidad',
+    path: '/empleabilidad',
+    groups: [
+      {
+        label: '¿Por qué estudiar con nosotros?',
+        items: [
+          { name: '¿Por qué estudiar con nosotros?', path: '/empleabilidad/porque-estudiar' }
+        ]
+      },
+      {
+        label: 'Casos de éxito',
+        items: [
+          { name: 'Casos de éxito', path: '/empleabilidad/casos-exito' }
+        ]
+      }
+    ]
+  },
   { name: 'Contacto', path: '/contacto' },
 ];
 
@@ -195,7 +213,7 @@ export const ADMISION_GROUPS: NavGroup[] = [
   {
     label: 'Postulantes',
     items: [
-      { name: 'Guía del postulante', path: '/admision/guia' },
+      { name: 'Guía del postulante', path: 'https://www.admisionunt.info/', external: true },
     ],
   },
   {

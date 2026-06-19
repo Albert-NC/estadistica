@@ -1,57 +1,53 @@
-export const mision = "Formar ingenieros ambientales con sólida base científica y tecnológica, capaces de prevenir, controlar y remediar la contaminación, gestionar de manera sostenible los recursos naturales y aportar soluciones de ingeniería al desarrollo sostenible del país, con compromiso ético y responsabilidad social.";
+export const mision = "Formar profesionales en estadística con sólida base científica y tecnológica, capaces de recolectar, procesar, analizar y modelar datos para la toma de decisiones estratégicas, aportando soluciones metodológicas al desarrollo social, científico y económico del país, con compromiso ético y responsabilidad social.";
 
-export const vision = "Ser una Escuela Profesional líder a nivel nacional e internacional en la formación de ingenieros ambientales, reconocida por su calidad académica, su investigación aplicada en gestión ambiental y su contribución a la sostenibilidad y la resiliencia frente al cambio climático.";
+export const vision = "Ser una Escuela Profesional líder a nivel nacional e internacional en la formación de profesionales en estadística y ciencia de datos, reconocida por su calidad académica, su investigación matemática y aplicada, y su contribución a la innovación tecnológica y el desarrollo sostenible.";
 
 export const valores = [
   {
-    nombre: "Sostenibilidad",
-    descripcion: "Compromiso con el uso responsable de los recursos y el equilibrio entre desarrollo, sociedad y ambiente."
-  },
-  {
     nombre: "Rigor científico",
-    descripcion: "Búsqueda de la excelencia académica e investigación basada en evidencia y método."
+    descripcion: "Búsqueda de la excelencia académica y metodológica basada en evidencia, análisis de datos y el método científico."
   },
   {
     nombre: "Ética",
-    descripcion: "Actuación con integridad, transparencia y responsabilidad en el ejercicio profesional de la ingeniería."
+    descripcion: "Actuación con integridad, objetividad, transparencia y confidencialidad en el tratamiento y análisis de la información."
   },
   {
     nombre: "Innovación",
-    descripcion: "Desarrollo y aplicación de tecnologías limpias y soluciones creativas a los problemas ambientales."
+    descripcion: "Desarrollo y aplicación de nuevas metodologías estadísticas, algoritmos y herramientas de ciencia de datos."
   },
   {
     nombre: "Responsabilidad social",
-    descripcion: "Vocación de servicio orientada a mejorar la calidad de vida y el ambiente de las comunidades."
+    descripcion: "Vocación de servicio orientada a generar información estadística confiable que contribuya a la toma de decisiones públicas y privadas para el bienestar común."
   },
   {
     nombre: "Trabajo en equipo",
-    descripcion: "Colaboración multidisciplinaria para abordar retos ambientales complejos."
+    descripcion: "Colaboración multidisciplinaria para abordar problemas complejos mediante el análisis cuantitativo."
   }
 ];
 
 export const historia = {
-  fundacion: 2008,
-  resena: "La Escuela Profesional de Ingeniería Ambiental fue creada para responder a la creciente necesidad de profesionales capaces de enfrentar los desafíos ambientales del país. Desde su fundación ha formado ingenieros comprometidos con la prevención y el control de la contaminación, la gestión de recursos naturales y el desarrollo sostenible, adaptándose continuamente a los avances tecnológicos y a la normativa ambiental vigente.",
+  fundacion: 1962,
+  resena: "La enseñanza de la Estadística en la Universidad Nacional de Trujillo se remonta a 1962, cuando se aprobaron los primeros planes de estudio en la Facultad de Ciencias Físicas y Matemáticas. Inicialmente orientada a formar Licenciados en Estadística, la escuela evolucionó para responder a los retos del siglo XXI. En el año 2001, mediante una profunda reforma curricular, se estableció la denominación del grado de Bachiller en Ciencias Estadísticas y el título profesional de Ingeniero Estadístico, consolidando una formación de rigor científico, computacional y social adaptada a la era de la ciencia de datos.",
   hitos: [
     {
-      año: 2008,
-      descripcion: "Creación de la Escuela Profesional de Ingeniería Ambiental, con su primera promoción de estudiantes."
+      año: 1962,
+      descripcion: "Instalación de la Facultad de Ciencias Físicas y Matemáticas e inicio de los planes de estudio que conducían al título en Estadística."
     },
     {
-      año: 2012,
-      descripcion: "Implementación de los laboratorios de calidad de agua, aire y suelos para la formación práctica."
+      año: 1977,
+      descripcion: "Implementación del plan de estudios flexible de 10 ciclos académicos, incluyendo prácticas preprofesionales obligatorias."
     },
     {
-      año: 2016,
-      descripcion: "Primer rediseño curricular orientado a la gestión integrada de recursos hídricos y residuos sólidos."
+      año: 2001,
+      descripcion: "Reforma integral que cambia la denominación del título profesional al de Ingeniero Estadístico, impulsando el perfil tecnológico y cuantitativo."
     },
     {
-      año: 2019,
-      descripcion: "Egreso de la primera generación de titulados y consolidación de las líneas de investigación ambiental."
+      año: 2018,
+      descripcion: "Aprobación del Currículo 2018 con enfoque por competencias, integrando software estadístico de vanguardia y líneas de investigación aplicada."
     },
     {
-      año: 2023,
-      descripcion: "Proceso de autoevaluación con fines de acreditación de la calidad del programa ante el SINEACE."
+      año: 2025,
+      descripcion: "Ajuste curricular del plan de estudios para potenciar la formación en ciencia de datos, machine learning y analítica predictiva en beneficio del desarrollo nacional."
     }
   ]
 };

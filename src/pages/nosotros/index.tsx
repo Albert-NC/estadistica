@@ -6,7 +6,7 @@ export default function NosotrosIndex() {
   return (
     <SectionLayout
       title="Sobre Nosotros"
-      subtitle="Conoce la identidad, valores e historia de la Escuela de Ingeniería Ambiental."
+      subtitle="Conoce la identidad, valores e historia de la Escuela de Estadística."
       icon={BookHeart}
       basePath="/nosotros"
       breadcrumbs={[{ label: 'Nosotros' }]}

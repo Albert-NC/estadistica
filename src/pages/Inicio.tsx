@@ -4,11 +4,13 @@ import { motion } from 'framer-motion';
 import PageWrapper from '../components/layout/PageWrapper';
 import { SectionTitle } from '../components/ui/SectionTitle';
 import { Card } from '../components/ui/Card';
-import { BookOpen, Users, FlaskConical, GraduationCap, Handshake, ArrowRight, Calendar } from 'lucide-react';
+import { BookOpen, Users, FlaskConical, GraduationCap, Handshake, ArrowRight, Calendar, Play, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '../components/ui/Button';
-import frontImage from '../assets/front_ingAmbi.webp';
-import frontImage2 from '../assets/front_ingAmbi1.webp';
+import frontImage from '../assets/2023fotoestadistica.jpg';
+import frontImage2 from '../assets/fondo3.jpg';
 import frontImage3 from '../assets/frontunt.webp';
+import bibliotecaImg from '../assets/biblioteca_1.png';
+import laboratorioMecImg from '../assets/laboratorio_mec.png';
 import { noticias } from '../constants/noticias';
 import { director } from '../constants/autoridades';
 import useHeaderHeight from '../hooks/useHeaderHeight';
@@ -36,6 +38,49 @@ export default function Inicio() {
       window.removeEventListener('resize', update);
     };
   }, []);
+
+  // Carousel states for the news section
+  const [newsIndex, setNewsIndex] = useState(0);
+  const [visibleNews, setVisibleNews] = useState(3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setVisibleNews(1);
+      } else if (window.innerWidth < 1024) {
+        setVisibleNews(2);
+      } else {
+        setVisibleNews(3);
+      }
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setNewsIndex((prev) => {
+        const maxIndex = noticias.length - visibleNews;
+        return prev >= maxIndex ? 0 : prev + 1;
+      });
+    }, 4500);
+    return () => clearInterval(interval);
+  }, [visibleNews]);
+
+  const nextNews = () => {
+    setNewsIndex((prev) => {
+      const maxIndex = noticias.length - visibleNews;
+      return prev >= maxIndex ? 0 : prev + 1;
+    });
+  };
+
+  const prevNews = () => {
+    setNewsIndex((prev) => {
+      const maxIndex = noticias.length - visibleNews;
+      return prev <= 0 ? Math.max(0, maxIndex) : prev - 1;
+    });
+  };
 
   // Carrusel del hero (máx. 3 imágenes): crossfade suave entre fondos.
   // Fotos de la Escuela de Ingeniería Ambiental (src/assets).
@@ -82,14 +127,14 @@ export default function Inicio() {
     { titulo: "Plana Docente", descripcion: "Profesores e investigadores comprometidos.", icono: Users, link: "/organizacion/docentes", imagen: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80" },
     { titulo: "Investigación", descripcion: "Líneas, proyectos y publicaciones activas.", icono: FlaskConical, link: "/investigacion/proyectos", imagen: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&q=80" },
     { titulo: "Grados y Títulos", descripcion: "Pasos y requisitos para tu titulación.", icono: GraduationCap, link: "/academico/titulacion", imagen: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80" },
-    { titulo: "Convenios", descripcion: "Alianzas con entidades del sector ambiental.", icono: Handshake, link: "/academico/convenios", imagen: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=600&q=80" },
+    { titulo: "Convenios", descripcion: "Alianzas con entidades de estadística y ciencia de datos.", icono: Handshake, link: "/academico/convenios", imagen: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=600&q=80" },
   ];
 
   const cifras = [
-    { numero: "+15", etiqueta: "Años formando ingenieros", sub: "de trayectoria ininterrumpida" },
-    { numero: "800+", etiqueta: "Egresados a nivel nacional", sub: "aportando a la sostenibilidad" },
-    { numero: "100%", etiqueta: "Malla actualizada", sub: "con enfoque en sostenibilidad" },
-    { numero: "SINEACE", etiqueta: "En proceso de acreditación", sub: "calidad educativa" },
+    { numero: "+60", etiqueta: "Años formando profesionales", sub: "de trayectoria ininterrumpida" },
+    { numero: "800+", etiqueta: "Egresados a nivel nacional", sub: "aportando al desarrollo cuantitativo" },
+    { numero: "100%", etiqueta: "Malla actualizada", sub: "con enfoque en ciencia de datos" },
+    { numero: "97%", etiqueta: "Egresados ya trabajan", sub: "segun ..." },
   ];
 
   return (
@@ -143,19 +188,17 @@ export default function Inicio() {
 
             <motion.h1
               variants={itemVariants}
-              className="font-display font-black leading-none mb-3 text-white"
-              style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', textShadow: '0 8px 32px rgba(0,0,0,0.4)' }}
+              className="font-display font-black leading-none mb-3"
+              style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', textShadow: '0 8px 32px rgba(0,0,0,0.4)', color: '#E6AC09' }}
             >
-              Ingeniería<br />
-              <span style={{ color: '#E6AC09' }}>Ambiental</span>
+              Estadística
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
               className="text-lg md:text-xl lg:text-2xl text-white/85 mb-8 font-body leading-relaxed"
             >
-              Formamos ingenieros ambientales en la Universidad Nacional de Trujillo,
-              con rigor científico y compromiso con la sostenibilidad.
+              Forma parte de quienes <strong className="font-extrabold text-white">transforman datos</strong> en <strong className="font-extrabold text-white">decisiones estratégicas.</strong>
             </motion.p>
 
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 justify-center md:justify-end">
@@ -199,14 +242,43 @@ export default function Inicio() {
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
                 className={`py-8 px-6 text-center border-white/10 ${idx < 3 ? 'lg:border-r' : ''} ${idx < 2 ? 'border-r' : ''} border-b lg:border-b-0`}
               >
-                <div
-                  className="text-4xl md:text-5xl font-display font-black mb-1"
-                  style={{ color: '#E6AC09', textShadow: '0 0 20px rgba(230,172,9,0.3)' }}
-                >
-                  {cifra.numero}
-                </div>
-                <p className="text-white font-bold text-sm md:text-base">{cifra.etiqueta}</p>
-                <p className="text-white/60 text-xs mt-0.5">{cifra.sub}</p>
+                {idx === 3 ? (
+                  <Link to="/empleabilidad/porque-estudiar" className="block group">
+                    <motion.div
+                      animate={{ y: [0, -4, 0] }}
+                      transition={{
+                        repeat: Infinity,
+                        duration: 2,
+                        ease: "easeInOut"
+                      }}
+                      className="group-hover:scale-105 transition-transform duration-300 cursor-pointer"
+                    >
+                      <div
+                        className="text-4xl md:text-5xl font-display font-black mb-1 group-hover:text-gold-dark transition-colors"
+                        style={{ color: '#E6AC09', textShadow: '0 0 20px rgba(230,172,9,0.3)' }}
+                      >
+                        {cifra.numero}
+                      </div>
+                      <p className="text-white font-bold text-sm md:text-base group-hover:text-gold transition-colors">
+                        {cifra.etiqueta}
+                      </p>
+                      {cifra.sub && <p className="text-white/60 text-xs mt-0.5 group-hover:text-white/80 transition-colors">{cifra.sub}</p>}
+                    </motion.div>
+                  </Link>
+                ) : (
+                  <>
+                    <div
+                      className="text-4xl md:text-5xl font-display font-black mb-1"
+                      style={{ color: '#E6AC09', textShadow: '0 0 20px rgba(230,172,9,0.3)' }}
+                    >
+                      {cifra.numero}
+                    </div>
+                    <p className="text-white font-bold text-sm md:text-base">
+                      {cifra.etiqueta}
+                    </p>
+                    {cifra.sub && <p className="text-white/60 text-xs mt-0.5">{cifra.sub}</p>}
+                  </>
+                )}
               </motion.div>
             ))}
           </div>
@@ -233,10 +305,10 @@ export default function Inicio() {
 
               <div className="text-gray-700 font-body space-y-4 leading-relaxed">
                 <p>
-                  "Bienvenidos a la Escuela Profesional de Ingeniería Ambiental. Formamos
-                  ingenieros capaces de prevenir y resolver los problemas ambientales con
-                  rigor científico y compromiso con la sostenibilidad. Te invitamos a conocer
-                  un programa que cuida cada detalle de tu formación."
+                  "¡Bienvenidos a la Carrera de Estadística! Este espacio te invita a sumergirte en el fascinante mundo del análisis de datos y la inferencia cuantitativa. Prepárate para iniciar un viaje académico riguroso, donde cultivarás habilidades esenciales para descubrir patrones, construir modelos predictivos y tomar decisiones informadas."
+                </p>
+                <p>
+                  "Estamos emocionados de acompañarte en este camino científico, contribuyendo a tu desarrollo integral como especialista en datos. ¡Comencemos juntos este desafiante viaje hacia el liderazgo analítico y la transformación digital de nuestra sociedad en la carrera de Estadística!"
                 </p>
                 <footer className="text-sm text-gray-600 not-italic font-semibold">
                   Karen Valderrama, Rectora de la Universidad Nacional de Trujillo
@@ -253,79 +325,126 @@ export default function Inicio() {
               className="w-full rounded-xl overflow-hidden shadow-2xl relative border-4 border-gray-50"
               style={{ paddingTop: '56.25%' }}
             >
-              <iframe 
-                className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/6mmdvUizSbk?start=7" 
-                title="Video Institucional Ingeniería Ambiental UNT"
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowFullScreen
-              ></iframe>
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-deep to-pucp-blue-dark flex flex-col justify-between p-6 overflow-hidden group select-none">
+                {/* Patrón de puntos sutil */}
+                <div className="absolute inset-0 opacity-[0.05] z-0"
+                  style={{
+                    backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
+                    backgroundSize: '16px 16px'
+                  }}
+                />
+                
+                {/* Botón de reproducción en el centro */}
+                <div className="absolute inset-0 flex items-center justify-center z-10">
+                  <div className="w-16 h-16 rounded-full bg-white/10 border border-white/20 flex items-center justify-center backdrop-blur-sm shadow-xl group-hover:scale-110 group-hover:bg-white/20 transition-all duration-300">
+                    <Play className="w-6 h-6 text-white ml-0.5" fill="currentColor" />
+                  </div>
+                </div>
+
+                {/* Texto abajo a la izquierda */}
+                <div className="absolute bottom-6 left-6 text-left z-10">
+                  <p className="font-display font-black text-white text-lg md:text-xl leading-tight">
+                    Video Institucional Estadística
+                  </p>
+                  <p className="text-gold font-bold text-sm mt-1 uppercase tracking-wider">
+                    Próximamente
+                  </p>
+                </div>
+              </div>
             </motion.div>
 
           </div>
         </div>
       </section>
       {/* ─── Sección Noticias y Actualidad ─── */}
-      <section className="py-16 md:py-20 bg-gray-50">
+      <section className="py-16 md:py-20 bg-gray-50 overflow-hidden">
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
             <SectionTitle title="Noticias y **Actualidad**" subtitle="Últimas novedades, eventos y comunicados de la Escuela." />
-            <Link
-              to="/noticias"
-              className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-gold transition-colors whitespace-nowrap shrink-0"
-            >
-              Ver todas <ArrowRight className="w-4 h-4" />
-            </Link>
+            <div className="flex items-center gap-4 whitespace-nowrap shrink-0">
+              <Link
+                to="/noticias"
+                className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-gold transition-colors"
+              >
+                Ver todas <ArrowRight className="w-4 h-4" />
+              </Link>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={prevNews}
+                  className="p-2 rounded-full border border-gray-200 hover:border-gold hover:bg-gold/10 text-primary transition-colors focus:outline-none"
+                  aria-label="Noticias anteriores"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={nextNews}
+                  className="p-2 rounded-full border border-gray-200 hover:border-gold hover:bg-gold/10 text-primary transition-colors focus:outline-none"
+                  aria-label="Siguientes noticias"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
-            {noticias.map((noticia, idx) => (
-              <motion.div
-                key={noticia.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                whileHover={{ y: -4 }}
-              >
-                <Link to={noticia.link} className="block h-full group">
-                  <Card className="h-full flex flex-col p-0 overflow-hidden hover:shadow-lg transition-shadow">
-                    {/* Franja superior de color por categoría */}
-                    <div className="h-1.5 bg-primary w-full" />
-                    {/* Imagen de la noticia */}
-                    <div className="h-48 w-full overflow-hidden shrink-0">
-                      <img
-                        src={noticia.imagen}
-                        alt={noticia.titulo}
-                        loading="lazy"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="p-6 flex flex-col flex-1">
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${noticia.categoriaColor}`}>
-                          {noticia.categoria}
-                        </span>
-                        <span className="flex items-center gap-1 text-gray-500 text-xs ml-auto">
-                          <Calendar className="w-3 h-3" />
-                          {noticia.fechaFormateada}
+          <div className="overflow-hidden -mx-3.5">
+            <div 
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${newsIndex * (100 / visibleNews)}%)` }}
+            >
+              {noticias.map((noticia, idx) => (
+                <motion.div
+                  key={noticia.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="w-full md:w-1/2 lg:w-1/3 shrink-0 px-3.5"
+                >
+                  <Link to={noticia.link} className="block h-full group">
+                    <Card className="h-full flex flex-col p-0 overflow-hidden hover:shadow-lg transition-shadow">
+                      {/* Franja superior de color por categoría */}
+                      <div className="h-1.5 bg-primary w-full" />
+                      {/* Imagen de la noticia o color entero si está vacío */}
+                      <div className="h-48 w-full overflow-hidden shrink-0">
+                        {noticia.imagen ? (
+                          <img
+                            src={noticia.imagen}
+                            alt={noticia.titulo}
+                            loading="lazy"
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-gradient-to-br from-pucp-blue-dark to-blue-deep flex items-center justify-center text-white/20 group-hover:from-blue-deep group-hover:to-pucp-blue-dark transition-all duration-300">
+                            <BookOpen className="w-12 h-12 group-hover:scale-110 transition-transform duration-300" />
+                          </div>
+                        )}
+                      </div>
+                      <div className="p-6 flex flex-col flex-1">
+                        <div className="flex items-center gap-2 mb-3">
+                          <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${noticia.categoriaColor}`}>
+                            {noticia.categoria}
+                          </span>
+                          <span className="flex items-center gap-1 text-gray-500 text-xs ml-auto">
+                            <Calendar className="w-3 h-3" />
+                            {noticia.fechaFormateada}
+                          </span>
+                        </div>
+                        <h3 className="font-display font-bold text-primary text-base leading-snug mb-3 group-hover:text-gold transition-colors flex-1">
+                          {noticia.titulo}
+                        </h3>
+                        <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                          {noticia.resumen}
+                        </p>
+                        <span className="mt-auto inline-flex items-center gap-1 text-gold text-sm font-bold group-hover:gap-2 transition-all">
+                          Leer más <ArrowRight className="w-3.5 h-3.5" />
                         </span>
                       </div>
-                      <h3 className="font-display font-bold text-primary text-base leading-snug mb-3 group-hover:text-gold transition-colors flex-1">
-                        {noticia.titulo}
-                      </h3>
-                      <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                        {noticia.resumen}
-                      </p>
-                      <span className="mt-auto inline-flex items-center gap-1 text-gold text-sm font-bold group-hover:gap-2 transition-all">
-                        Leer más <ArrowRight className="w-3.5 h-3.5" />
-                      </span>
-                    </div>
-                  </Card>
-                </Link>
-              </motion.div>
-            ))}
+                    </Card>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -404,66 +523,69 @@ export default function Inicio() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
             
-            {/* Módulo de Estimulación Temprana */}
+            {/* Biblioteca */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="group relative rounded-3xl overflow-hidden bg-blue-deep h-[380px] md:h-[450px] flex items-end shadow-xl"
+              className="group relative rounded-3xl overflow-hidden bg-blue-deep h-[380px] md:h-[450px] flex items-end shadow-xl border border-gray-150"
             >
               <div className="absolute inset-0">
                 <img 
-                  src="https://images.unsplash.com/photo-1587691592099-24045742c181?w=800&q=80"
-                  alt="Módulo de Estimulación Temprana"
+                  src={bibliotecaImg}
+                  alt="Biblioteca"
                   loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-50 mix-blend-luminosity"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-80 mix-blend-luminosity"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-deep via-blue-deep/80 to-transparent" />
-                <div className="absolute inset-0 bg-primary/20 mix-blend-multiply" />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-deep via-blue-deep/60 to-transparent" />
+                <div className="absolute inset-0 bg-primary/15 mix-blend-multiply" />
               </div>
-              <div className="relative z-10 p-8 md:p-10 w-full transform group-hover:-translate-y-2 transition-transform duration-500">
+              <div className="relative z-10 p-8 md:p-10 w-full transform group-hover:-translate-y-2 transition-transform duration-500 text-left">
                 <span className="inline-block px-3.5 py-1.5 bg-gold text-blue-deep text-[10px] font-black tracking-widest uppercase rounded-md mb-4 shadow-lg">
-                  Laboratorio
+                  Estudio e Investigación
                 </span>
                 <h3 className="text-2xl md:text-4xl font-display font-black text-white mb-3 leading-tight">
-                  Laboratorio de Calidad de Agua
+                  Biblioteca
                 </h3>
                 <div className="w-24 h-1 bg-gold mb-4 origin-left scale-x-50 transition-transform duration-500 group-hover:scale-x-100"></div>
                 <p className="text-white/80 text-sm md:text-base leading-relaxed max-w-lg">
-                  Espacio equipado con instrumentación para el análisis físico, químico y biológico del agua, base para el monitoreo y tratamiento de los recursos hídricos.
+                  Un espacio diseñado para la lectura, el estudio continuo y el acceso a material bibliográfico especializado en estadística y ciencia de datos.
                 </p>
               </div>
             </motion.div>
 
-            {/* Centro de Cómputo */}
+            {/* MEC */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="group relative rounded-3xl overflow-hidden bg-blue-deep h-[380px] md:h-[450px] flex items-end shadow-xl"
+              className="group relative rounded-3xl overflow-hidden bg-blue-deep h-[380px] md:h-[450px] flex items-end shadow-xl border border-gray-150"
             >
               <div className="absolute inset-0">
                 <img 
-                  src="https://images.unsplash.com/photo-1517430816045-df4b7ef11df1?w=800&q=80"
-                  alt="Centro de Cómputo"
+                  src={laboratorioMecImg}
+                  alt="MEC"
                   loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-50 mix-blend-luminosity"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-80 mix-blend-luminosity"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-deep via-blue-deep/80 to-transparent" />
-                <div className="absolute inset-0 bg-primary/20 mix-blend-multiply" />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-deep via-blue-deep/60 to-transparent" />
+                <div className="absolute inset-0 bg-primary/15 mix-blend-multiply" />
               </div>
-              <div className="relative z-10 p-8 md:p-10 w-full transform group-hover:-translate-y-2 transition-transform duration-500">
+              <div className="relative z-10 p-8 md:p-10 w-full transform group-hover:-translate-y-2 transition-transform duration-500 text-left">
                 <span className="inline-block px-3.5 py-1.5 bg-gold text-blue-deep text-[10px] font-black tracking-widest uppercase rounded-md mb-4 shadow-lg">
                   Laboratorio
                 </span>
-                <h3 className="text-2xl md:text-4xl font-display font-black text-white mb-3 leading-tight">
-                  Monitoreo de<br/>Calidad del Aire
+                <h3 className="text-2xl md:text-4xl font-display font-black text-white mb-1 leading-tight">
+                  MEC
                 </h3>
+                <p className="text-gold font-display font-bold text-xs md:text-sm mb-3">
+                  (Módulo Estadístico Computacional)
+                </p>
                 <div className="w-24 h-1 bg-gold mb-4 origin-left scale-x-50 transition-transform duration-500 group-hover:scale-x-100"></div>
-                <p className="text-white/80 text-sm md:text-base leading-relaxed max-w-lg">
-                  Laboratorio con equipos para medir material particulado y gases contaminantes, donde los estudiantes desarrollan competencias en gestión de la calidad del aire.
+                <p className="text-white/80 text-sm md:text-base leading-relaxed max-w-lg font-body">
+                  Contamos con <strong>2 módulos estadísticos computacionales</strong> donde los estudiantes practican con software de la industria: <strong>R</strong> (análisis estadístico), <strong>SQL</strong> (bases de datos), <strong>SPSS</strong> (IBM) y <strong>SAS</strong> (estadística empresarial avanzada).
                 </p>
               </div>
             </motion.div>

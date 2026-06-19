@@ -66,7 +66,7 @@ export default function Navbar() {
   }, [isOpen]);
 
   return (
-    <header 
+    <header
       className={clsx(
         'sticky top-0 z-50 w-full transition-all duration-300',
         scrolled ? 'bg-white shadow-md' : 'bg-white'
@@ -83,7 +83,7 @@ export default function Navbar() {
             </span>
             <span className="flex items-center gap-1.5 hover:text-gold transition-colors cursor-pointer">
               <Mail className="w-4 h-4" />
-              facedu@unitru.edu.pe
+              estadistica@unitru.edu.pe
             </span>
           </div>
           <div className="flex items-center">
@@ -97,8 +97,8 @@ export default function Navbar() {
                 onKeyDown={handleSearch}
                 className="bg-transparent text-white placeholder-gray-400 text-[13px] px-3 py-1 outline-none border-b border-transparent focus:border-gold transition-all w-32 focus:w-48"
               />
-              <Search 
-                className="w-4 h-4 text-gray-400 ml-1 hover:text-gold cursor-pointer transition-colors" 
+              <Search
+                className="w-4 h-4 text-gray-400 ml-1 hover:text-gold cursor-pointer transition-colors"
                 onClick={handleSearch}
               />
             </div>
@@ -120,27 +120,12 @@ export default function Navbar() {
                 alt="Universidad Nacional de Trujillo"
                 className="h-16 sm:h-20 md:h-[120px] w-auto object-contain drop-shadow-md"
               />
-              {/* Separador (solo si existe el logo de la escuela) */}
-              {schoolLogoOk && (
-                <span className="block w-px h-10 sm:h-12 md:h-20 bg-gray-300" aria-hidden="true" />
-              )}
-              {/* Logo de la Escuela: colocar la imagen en public/logos/logo-escuela.png.
-                  Si no existe, no se muestra (ni el logo ni el separador). */}
-              <img
-                src={schoolLogoUrl}
-                alt="Escuela Profesional de Ingeniería Ambiental"
-                onLoad={() => setSchoolLogoOk(true)}
-                onError={() => setSchoolLogoOk(false)}
-                className={clsx(
-                  'h-16 sm:h-20 md:h-[120px] w-auto object-contain drop-shadow-md',
-                  !schoolLogoOk && 'hidden'
-                )}
-              />
             </div>
+            {/* Separador */}
+            <span className="block w-px h-10 sm:h-12 md:h-20 bg-gray-300" aria-hidden="true" />
             <div className="flex flex-col ml-1 md:ml-3">
               <span className="font-display font-black tracking-tight leading-[0.95] text-base sm:text-lg md:text-3xl flex flex-col">
-                <span className="text-pucp-blue-dark">Ingeniería</span>
-                <span className="text-gold">Ambiental</span>
+                <span className="text-pucp-blue-dark">ESTADÍSTICA</span>
               </span>
             </div>
           </Link>
@@ -171,8 +156,8 @@ export default function Navbar() {
                   // abriendo el menú vía focus-within, intacto.
                   onClick={(e) => e.currentTarget.blur()}
                   className={({ isActive }) => clsx(
-                  'font-body font-medium text-[16px] transition-colors flex items-center px-7 py-5 md:py-6',
-                  isActive ? 'bg-gold text-blue-deep' : 'text-white hover:bg-white/10'
+                    'font-body font-medium text-[14px] transition-colors flex items-center px-3.5 py-3 md:py-4',
+                    isActive ? 'bg-gold text-blue-deep' : 'text-white hover:bg-white/10'
                   )}
                 >
                   {link.name}

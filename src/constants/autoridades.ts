@@ -1,8 +1,8 @@
 export const director = {
-  nombre: "Dr. Ing. Carlos Alberto Mendoza Ríos",
-  cargo: "Director de la Escuela Profesional de Ingeniería Ambiental",
-  correo: "direccion.ambiental@universidad.edu.pe",
-  bio: "Doctor en Ingeniería Ambiental con amplia experiencia en gestión de recursos hídricos, evaluación de impacto ambiental y docencia universitaria.",
+  nombre: "Dr. Carlos Alberto Minchón Medina",
+  cargo: "Director (e) de la Escuela Profesional de Estadística",
+  correo: "direccion.estadistica@unitru.edu.pe",
+  bio: "Doctor en Ciencias e Ingeniería con amplia experiencia en investigación estadística, consultoría y miembro clave de la Comisión de Reforma Curricular.",
   foto: null // Placeholder
 };
 
@@ -10,23 +10,23 @@ export const coordinadores = [
   {
     nombre: "Mg. Ing. Roberto Carlos Salazar",
     cargo: "Coordinador Académico",
-    correo: "acad.ambiental@universidad.edu.pe"
+    correo: "acad.estadistica@unitru.edu.pe"
   },
   {
     nombre: "Dra. Ing. Patricia Salinas Vega",
     cargo: "Coordinadora de Investigación",
-    correo: "investiga.ambiental@universidad.edu.pe"
+    correo: "investiga.estadistica@unitru.edu.pe"
   },
   {
     nombre: "Mg. Ing. Luis Fernando Gómez",
     cargo: "Coordinador de Prácticas Preprofesionales",
-    correo: "practicas.ambiental@universidad.edu.pe"
+    correo: "practicas.estadistica@unitru.edu.pe"
   }
 ];
 
 export const organigrama = {
   nombre: "Dirección de Escuela",
-  cargo: "Dr. Ing. Carlos Alberto Mendoza",
+  cargo: "Dr. Carlos Alberto Minchón Medina",
   hijos: [
     {
       nombre: "Coordinación Académica",

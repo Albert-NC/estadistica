@@ -1,91 +1,91 @@
 // Plana docente. Cada docente:
-//   - grado: el cargo/grado académico (Doctor, Magíster, Ingeniero…)
+//   - grado: el cargo/grado académico (Doctor, Magíster, Licenciado…)
 //   - cursoPrincipal: el curso/área principal que aparece en el FRENTE de la card
 //   - especialidades: lista que aparece al voltear la card (reverso). Agrega 2-3 por docente.
 //   - foto: ruta de la foto o null (muestra silueta placeholder)
 export const docentes = [
   {
-    nombre: "Dr. Ing. Carlos Alberto Mendoza Ríos",
+    nombre: "Profesor 1",
     grado: "Doctor",
-    cursoPrincipal: "Gestión de Recursos Hídricos",
-    especialidades: ["Tratamiento de aguas residuales", "Hidrología", "Calidad del agua"],
+    cursoPrincipal: "Inferencia Estadística",
+    especialidades: ["Inferencia estadística", "Diseños muestrales", "Teoría de la estimación"],
     foto: null
   },
   {
-    nombre: "Dra. Ing. Patricia Salinas Vega",
+    nombre: "Profesor 2",
     grado: "Doctora",
-    cursoPrincipal: "Calidad del Aire y Cambio Climático",
-    especialidades: ["Contaminación atmosférica", "Cambio climático", "Modelamiento de dispersión"],
+    cursoPrincipal: "Análisis de Regresión",
+    especialidades: ["Modelos lineales", "Análisis multivariante", "Econometría"],
     foto: null
   },
   {
-    nombre: "Dr. Ing. Jorge Villanueva Castro",
+    nombre: "Profesor 3",
     grado: "Doctor",
-    cursoPrincipal: "Gestión de Residuos Sólidos",
-    especialidades: ["Economía circular", "Valorización de residuos", "Rellenos sanitarios"],
+    cursoPrincipal: "Minería de Datos",
+    especialidades: ["Big data", "Machine learning", "Algoritmos predictivos"],
     foto: null
   },
   {
-    nombre: "Mg. Ing. Roberto Carlos Salazar",
+    nombre: "Profesor 4",
     grado: "Magíster",
-    cursoPrincipal: "Evaluación de Impacto Ambiental",
-    especialidades: ["Estudios de impacto ambiental", "Planes de manejo ambiental"],
+    cursoPrincipal: "Diseño de Experimentos",
+    especialidades: ["Diseño experimental", "Análisis no paramétrico"],
     foto: null
   },
   {
-    nombre: "Dra. Ing. Carmen Rosa Jiménez",
+    nombre: "Profesor 5",
     grado: "Doctora",
-    cursoPrincipal: "Química Ambiental",
-    especialidades: ["Análisis instrumental", "Monitoreo de contaminantes"],
+    cursoPrincipal: "Probabilidad",
+    especialidades: ["Teoría de probabilidades", "Procesos estocásticos"],
     foto: null
   },
   {
-    nombre: "Mg. Ing. Silvia Condori Mamani",
+    nombre: "Profesor 6",
     grado: "Magíster",
-    cursoPrincipal: "Microbiología Ambiental",
-    especialidades: ["Biorremediación", "Microbiología sanitaria"],
+    cursoPrincipal: "Estadística Computacional",
+    especialidades: ["Programación R", "Programación Python", "Simulación estadística"],
     foto: null
   },
   {
-    nombre: "Dr. Ing. Hernán Torres Aliaga",
+    nombre: "Profesor 7",
     grado: "Doctor",
-    cursoPrincipal: "Tratamiento de Aguas Residuales",
-    especialidades: ["Diseño de plantas de tratamiento", "Operaciones unitarias"],
+    cursoPrincipal: "Análisis Multivariante",
+    especialidades: ["Análisis de componentes principales", "Análisis de conglomerados", "Reducción de dimensionalidad"],
     foto: null
   },
   {
-    nombre: "Mg. Ing. Andrea Cáceres Ruiz",
+    nombre: "Profesor 8",
     grado: "Magíster",
-    cursoPrincipal: "Sistemas de Información Geográfica",
-    especialidades: ["SIG aplicado al ambiente", "Teledetección", "Ordenamiento territorial"],
+    cursoPrincipal: "Demografía y Actuaría",
+    especialidades: ["Análisis demográfico", "Estadística actuarial", "Tablas de mortalidad"],
     foto: null
   },
   {
-    nombre: "Dr. Ing. Francisco Paredes León",
+    nombre: "Profesor 9",
     grado: "Doctor",
-    cursoPrincipal: "Energías Renovables",
-    especialidades: ["Energía solar y eólica", "Tecnologías limpias"],
+    cursoPrincipal: "Series de Tiempo",
+    especialidades: ["Pronóstico de series de tiempo", "Modelos ARIMA", "Modelado econométrico"],
     foto: null
   },
   {
-    nombre: "Mg. Ing. Rosaura Montes Díaz",
+    nombre: "Profesor 10",
     grado: "Magíster",
-    cursoPrincipal: "Edafología y Remediación de Suelos",
-    especialidades: ["Remediación de suelos", "Manejo de suelos contaminados"],
+    cursoPrincipal: "Bioestadística",
+    especialidades: ["Bioestadística", "Análisis de supervivencia", "Ensayos clínicos"],
     foto: null
   },
   {
-    nombre: "Dr. Ing. Arturo Peralta Quispe",
+    nombre: "Profesor 11",
     grado: "Doctor",
-    cursoPrincipal: "Sistemas de Gestión Ambiental",
-    especialidades: ["ISO 14001", "Auditoría ambiental", "Producción más limpia"],
+    cursoPrincipal: "Control Estadístico de Calidad",
+    especialidades: ["Cartas de control", "Seis Sigma", "Gestión de calidad"],
     foto: null
   },
   {
-    nombre: "Mg. Ing. Lucía Fernández Soto",
+    nombre: "Profesor 12",
     grado: "Magíster",
-    cursoPrincipal: "Legislación y Economía Ambiental",
-    especialidades: ["Normativa ambiental", "Economía ambiental"],
+    cursoPrincipal: "Investigación de Operaciones",
+    especialidades: ["Programación lineal", "Teoría de colas", "Optimización"],
     foto: null
   }
 ];

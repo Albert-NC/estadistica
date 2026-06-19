@@ -1,53 +1,64 @@
 export const lineasInvestigacion = [
   {
-    nombre: "Gestión y Calidad de Recursos Hídricos",
-    descripcion: "Estudio, monitoreo y tratamiento del agua para garantizar su calidad y aprovechamiento sostenible en cuencas y zonas urbanas.",
-    responsable: "Dr. Ing. Carlos Alberto Mendoza Ríos"
+    nombre: "Línea 1",
+    descripcion: "Desarrollo y aplicación de modelos probabilísticos, matemáticos y algoritmos predictivos para la resolución de problemas complejos en la ciencia de datos.",
+    responsable: "Dr. Jorge Villanueva Castro"
   },
   {
-    nombre: "Calidad del Aire y Cambio Climático",
-    descripcion: "Evaluación de la contaminación atmosférica, gases de efecto invernadero y estrategias de mitigación y adaptación al cambio climático.",
-    responsable: "Dra. Ing. Patricia Salinas Vega"
+    nombre: "Línea 2",
+    descripcion: "Investigación en metodologías avanzadas de muestreo para encuestas a gran escala, censos y modelamiento actuarial de poblaciones.",
+    responsable: "Dr. Carlos Alberto Mendoza Ríos"
   },
   {
-    nombre: "Gestión de Residuos Sólidos y Economía Circular",
-    descripcion: "Manejo integral, valorización y aprovechamiento de residuos sólidos bajo el enfoque de economía circular.",
-    responsable: "Dr. Ing. Jorge Villanueva Castro"
+    nombre: "Línea 3",
+    descripcion: "Investigación y aplicación de técnicas estadísticas para estudiar sistemas con múltiples variables interrelacionadas y optimización de modelos predictivos.",
+    responsable: "Dra. Patricia Salinas Vega"
   }
 ];
 
 export const proyectos = [
   {
-    titulo: "Eficiencia de humedales artificiales para el tratamiento de aguas residuales rurales",
+    titulo: "Modelado predictivo de deserción estudiantil universitaria usando Machine Learning",
     estado: "En ejecución",
     año: "2023-2024",
-    descripcion: "Investigación aplicada que evalúa el desempeño de humedales construidos como tecnología de bajo costo para comunidades rurales.",
-    investigadores: ["Mg. Ing. Roberto Carlos Salazar", "Dr. Ing. Hernán Torres"]
+    descripcion: "Investigación aplicada que evalúa el desempeño de algoritmos de clasificación (Random Forest, XGBoost y Redes Neuronales) para la detección temprana de deserción académica.",
+    investigadores: ["Mg. Roberto Carlos Salazar", "Dr. Jorge Villanueva Castro"]
   },
   {
-    titulo: "Monitoreo de la calidad del aire mediante sensores de bajo costo en zonas urbanas",
+    titulo: "Optimización de diseños de muestreo no probabilístico para estimación socioeconómica rápida",
     estado: "Finalizado",
     año: "2022-2023",
-    descripcion: "Estudio sobre el despliegue de redes de sensores para estimar material particulado y apoyar la gestión de la calidad del aire.",
-    investigadores: ["Dra. Ing. Andrea Cáceres", "Dr. Ing. Jorge Villanueva"]
+    descripcion: "Desarrollo de métodos de ponderación por propensión y calibración estadística para mitigar el sesgo en encuestas web urbanas.",
+    investigadores: ["Mg. Andrea Cáceres Ruiz", "Dra. Patricia Salinas Vega"]
   }
 ];
 
 export const publicaciones = [
   {
-    titulo: "Remoción de metales pesados en aguas residuales mediante biocarbón de residuos agrícolas",
-    autores: "Mendoza, C., & Salinas, P.",
-    año: 2023,
-    revista: "Revista Peruana de Ingeniería y Gestión Ambiental",
-    url: "#"
+    titulo: "Efecto de los lazos parentales en la autoestima de estudiantes de la Facultad de Ciencias Físicas y Matemáticas de la Universidad Nacional de Trujillo",
+    autores: "Gutiérrez de Alarcón, R., Cuadra Moreno, M. L., Alarcón Gutiérrez, R., Sánchez Pereda, S., & Alarcón Gutiérrez, C. G.",
+    año: 2025,
+    revista: "Revista de Investigación Estadística – REDIES (ISSN: 2708-1125), Vol. 7, N.° 1",
+    resumen: "Estudio observacional descriptivo que determina el efecto de los lazos parentales en la autoestima de 191 estudiantes universitarios. Utilizando el Cuestionario de Lazos Parentales de Parker y la Escala de Autoestima de Rosenberg, se halló que altos niveles de cuidado parental favorecen una autoestima saludable.",
+    url: "https://revistas.unitru.edu.pe/index.php/REDIES/article/view/7013",
+    pdf: "https://revistas.unitru.edu.pe/index.php/REDIES/article/download/7013/7086"
+  },
+  {
+    titulo: "Modelos de interpolación espacial para los movimientos sísmicos del Perú",
+    autores: "Rubio Jácobo, L. A., Ipanaqué Centeno, E., Rosas Reyes, Y. N., & Julián Rodríguez, C. F.",
+    año: 2025,
+    revista: "Revista de Investigación Estadística – REDIES (ISSN: 2708-1125), Vol. 7, N.° 1",
+    resumen: "Análisis geoestadístico de 2602 registros sísmicos del IGP (2020–2023) mediante modelos de interpolación espacial. Los modelos Matern y Exponencial presentaron mejor desempeño; se aplicó Kriging ordinario para generar mapas predictivos de distribución sísmica en el Perú.",
+    url: "https://revistas.unitru.edu.pe/index.php/REDIES/article/view/7012",
+    pdf: "https://revistas.unitru.edu.pe/index.php/REDIES/article/download/7012/7085"
   }
 ];
 
 export const convenios = [
   {
-    institucion: "Ministerio del Ambiente (MINAM)",
+    institucion: "Instituto Nacional de Estadística e Informática (INEI)",
     tipo: "Interinstitucional",
-    descripcion: "Alianza para el desarrollo de prácticas preprofesionales y proyectos de monitoreo y gestión ambiental.",
+    descripcion: "Alianza para el desarrollo de prácticas preprofesionales, intercambio de bases de datos anónimas y proyectos de investigación estadística conjunta.",
     vigencia: "2022 - 2027"
   }
 ];

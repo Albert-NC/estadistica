@@ -64,7 +64,7 @@ export default function PlanEstudios() {
 
         <div className="flex justify-center mt-6">
           <a 
-            href={`${import.meta.env.BASE_URL}Plan_de_Estudios_2025.pdf`} 
+            href={`${import.meta.env.BASE_URL}docs/Malla Curricular de Estadistica.pdf`} 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-blue-deep font-bold rounded-lg hover:bg-[#C49308] transition-colors shadow-md"

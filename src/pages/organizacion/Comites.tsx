@@ -8,7 +8,6 @@ import EnConstruccion from '../../components/layout/EnConstruccion';
  */
 const COMITES = [
   { id: 'calidad', titulo: 'Comité de **Calidad**', descripcion: 'Autoevaluación y acreditación de la calidad del programa.' },
-  { id: 'coteccu', titulo: 'Coteccu' },
   { id: 'consejeria', titulo: 'Consejería y **tutoría**' },
   { id: 'investigacion', titulo: 'Comité de **Investigación**' },
   { id: 'comision', titulo: 'Comisión' },
